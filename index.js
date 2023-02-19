@@ -67,30 +67,24 @@ function init() {
     .prompt(questions)
     // then create variables to hold the user's responses
     .then((response) => {
-      const githubUsername = response.githubUsername;
-      const emailAddress = response.emailAddress;
-      const projectName = response.projectName;
-      const projectDescription = response.projectDescription;
-      const license = response.license;
-      const installCommand = response.installCommand;
-      const testCommand = response.testCommand;
-      const howToUse = response.howToUse;
-      const howToContribute = response.howToContribute;
+      
 
-      console.log(githubUsername);
-      console.log(emailAddress);
-      console.log(projectName);
-      console.log(projectDescription);
-      console.log(license);
-      console.log(installCommand);
-      console.log(testCommand);
-      console.log(howToUse);
-      console.log(howToContribute);
+      // console.log(githubUsername);
+      // console.log(emailAddress);
+      // console.log(projectName);
+      // console.log(projectDescription);
+      // console.log(license);
+      // console.log(installCommand);
+      // console.log(testCommand);
+      // console.log(howToUse);
+      // console.log(howToContribute);
 
       // maybe use the genrateMarkdown function to first populate the README with user's responses
 
       // then call the function to create a new file with the README text generated
       // writeToFile(fileName, data);
+
+      fs.writeFileSync("sampleREADME.md",generateMarkdown(response))
     });
 }
 
